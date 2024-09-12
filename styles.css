@@ -8,7 +8,7 @@
 .search-form {
   margin-top: 0em;
   background-color: #fff;
-  font-size: x-large; 
+  font-size: x-large;
   font-weight: bold;
   font-style: italic;
   font-family: monospace;
@@ -23,26 +23,44 @@
   font-style: italic;
   font-family: monospace;
   border-radius: 10px;
+  border: dotted #c3c7f3;
 }
 .search-button:hover {
   background-color: #e3aadd;
   transition-delay: 200ms;
 }
-.search-engine{
-    margin:0;
-    display:inline;
-    
+.search-engine {
+  margin: 0;
+  display: inline;
+  box-shadow: #c3c7f3;
 }
 
-.temperature{
-  position:fixed;
-   right: 600px;
-   top: 60px;
+.temperature {
+  position: fixed;
+  right: 600px;
+  top: 60px;
 }
-.emoji{
-font-size:50pt;
- position:fixed;
-   right: 600px;
-   top: 10px;
-   color: #fff;
+.emoji {
+  font-size: 50pt;
+  position: fixed;
+  right: 600px;
+  top: 10px;
+  color: #fff;
+}
+
+.footer {
+  text-align: center;
+  font-weight: bolder;
+  color: #f3dcdc;
+}
+.date,
+.sky-coverage,
+.weather-description,
+.wind{
+  font-weight: bolder;
+
+}
+.weather-description-value,
+.wind-speed{
+  color:#c8a8c9;
 }
