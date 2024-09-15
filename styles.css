@@ -56,11 +56,10 @@
 .date,
 .sky-coverage,
 .weather-description,
-.wind{
+.wind {
   font-weight: bolder;
-
 }
 .weather-description-value,
-.wind-speed{
-  color:#c8a8c9;
+.wind-speed {
+  color: #c8a8c9;
 }
