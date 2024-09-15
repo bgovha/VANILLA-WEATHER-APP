@@ -36,16 +36,17 @@
 }
 
 .temperature {
-  position: fixed;
+  /*position: fixed;
   right: 600px;
-  top: 60px;
+  top: 60px;*/
+  float: left;
 }
 .emoji {
-  font-size: 50pt;
+  /* font-size: 50pt;
   position: fixed;
   right: 600px;
   top: 10px;
-  color: #fff;
+  color: #fff;*/
 }
 
 .footer {
