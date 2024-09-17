@@ -20,11 +20,6 @@ function refreshWeather(response) {
   getForecast(response.data.city);
 }
 
-function searchCity(city) {
-  let apiKey = "2abt3d4e02aa5e6116ef006dbocad3a0";
-  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
-  axios.get(apiUrl).then(refreshWeather);
-}
 function setDate(date) {
   let minutes = date.getMinutes();
   let hour = date.getHours();
@@ -38,12 +33,20 @@ function setDate(date) {
     "Saturday",
   ];
   let day = days[date.getDay()];
-  return `${day} ${hour}:${minutes}HRS`;
 
   if (minutes < 10) {
     minutes = `0 ${minutes}`;
   }
+
+  return `${day} ${hour}:${minutes}HRS`;
 }
+
+function searchCity(city) {
+  let apiKey = "2abt3d4e02aa5e6116ef006dbocad3a0";
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
+  axios.get(apiUrl).then(refreshWeather);
+}
+
 function searchFunction(event) {
   event.preventDefault();
   let formInput = document.querySelector("#search-form");
@@ -54,12 +57,13 @@ function searchFunction(event) {
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
   let days = ["Sun", "Mon", "Tues", "Wed", "Fri", "Sat"];
+
   return days[date.getDay()];
 }
 
 function getForecast(city) {
   let apiKey = "2abt3d4e02aa5e6116ef006dbocad3a0";
-  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}`;
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
   axios(apiUrl).then(displayForecast);
 }
 
@@ -76,12 +80,11 @@ function displayForecast(response) {
         <img src"${day.condition.icon_url}" class = "weather-forecast-icon" />
           <div class="weather-forecast-temperatures">
             <div class="weather-forecast-temperature">
-              <strong>${math.round(day.temperature.maximum)}°C</strong>
+              <strong>${Math.round(day.temperature.maximum)}°C</strong>
             </div>
-            <div class="weather-forecast-temperature">${math.round(
+            <div class="weather-forecast-temperature">${Math.round(
               day.temperature.minimum
-            )}°C
-              </div>
+            )}°C</div>
           </div>
         </div>
         `;
@@ -95,4 +98,3 @@ let searchForm = document.querySelector("#search-engine");
 searchForm.addEventListener("submit", searchFunction);
 
 searchCity("Harare");
-displayForecast();
