@@ -47,6 +47,7 @@
   right: 600px;
   top: 10px;
   color: #fff;*/
+  float: left;
 }
 
 .footer {
@@ -62,5 +63,33 @@
 }
 .weather-description-value,
 .wind-speed {
-  color: #c8a8c9;
+  color: #dfaddf;
+}
+.weather-forecast-date {
+  text-align: center;
+  color: #a36361;
+  font-size: 16px;
+  line-height: 20px;
+  margin-bottom: 12px;
+}
+.weather-forecast-icon {
+  font-size: 38px;
+  text-align: center;
+}
+.weather-forecast-temperatures {
+  text-align: center;
+  color: #a36361;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+.weather-forecast-temperature {
+  padding: 0 10px;
+}
+
+
+.weather-forecast{
+  display: flex;
+  justify-content: space-around;
+  margin-top: 30px;
 }
