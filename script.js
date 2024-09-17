@@ -51,7 +51,33 @@ function searchFunction(event) {
   searchCity(formInput.value);
 }
 
+function displayForecast() {
+
+
+  let days = ["Tue", "Wed", "Thur", "Fri", "Sat"];
+  let forecastHtml = "";
+
+  days.forEach(function (day) {
+    forecastHtml +=
+      `
+        <div class="weather-forecast-day">
+          <div class="weather-forecast-date">${day}</div>
+          <div class="weather-forecast-icon">🌩</div>
+          <div class="weather-forecast-temperatures">
+            <div class="weather-forecast-temperature">
+              <strong>21°C</strong>
+            </div>
+            <div class="weather-forecast-temperature">9°C</div>
+          </div>
+        </div>
+        `;
+  });
+
+  let forecastElement = document.querySelector("#forecast");
+  forecastElement.innerHTML = forecastHtml;
+}
 let searchForm = document.querySelector("#search-engine");
 searchForm.addEventListener("submit", searchFunction);
 
 searchCity("Harare");
+displayForecast();
