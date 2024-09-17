@@ -95,4 +95,4 @@ let searchForm = document.querySelector("#search-engine");
 searchForm.addEventListener("submit", searchFunction);
 
 searchCity("Harare");
-/*displayForecast();*/
+displayForecast();
